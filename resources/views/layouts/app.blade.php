@@ -10,23 +10,15 @@
 	<link rel="icon" href="{{ asset('images/favicon.ico') }}">
 	<title>ELLA - Dashboard</title>
 
-	<!-- Vendor CSS -->
-	<!-- DataTables CSS -->
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-
+<!-- CSS -->
 	<link rel="stylesheet" href="{{ asset('css/vendors_css.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/skin_color.css') }}">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
-
-	<!-- External CSS -->
-	<!-- jQuery dan DataTables -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
 
 	<style>
 		/* Button Panjang untuk Dashboard */
@@ -208,9 +200,10 @@
 									</span>
 								</a>
 								<ul class="treeview-menu">
-									<li><a href="/DokumenPengadaan"><i class="fas fa-file-alt"></i> Dokumen Pengadaan</a></li>
+									<li><a href="/surat"><i class="fas fa-file-alt"></i> Dokumen Pengadaan</a></li>
 									<li><a href="/DokumenKontrak"><i class="fas fa-file-contract"></i> Dokumen Kontrak</a></li>
 									<li><a href="/Rekapan"><i class="fas fa-clipboard-list"></i> Rekapan</a></li>
+									
 								</ul>
 							</li>
 							<li class="treeview">
@@ -283,6 +276,14 @@
 									<span>Dasar Hukum</span>
 								</a>
 							</li>
+														<li>
+						<a class="menu-link {{ request()->routeIs('peninjauan.index') ? 'active' : '' }}" href="{{ route('peninjauan.index') }}">
+    <i class="fas fa-clipboard-check"></i> {{-- Ganti dengan ikon pilihan --}}
+    <span>Peninjauan</span>
+</a>
+
+
+							</li>
 							<li>
 								<a href="#">
 									<i class="fas fa-comments"></i>
@@ -301,6 +302,15 @@
 									<span>Kontak Person</span>
 								</a>
 							</li>
+
+						<li>
+    <a class="menu-link {{ request()->routeIs('template.index') ? 'active' : '' }}" href="{{ route('template.index') }}">
+        <i class="fas fa-file-alt"></i> {{-- Ikon dokumen/template --}}
+        <span>Template</span>
+    </a>
+</li>
+
+							
 							<li>
 							<a class="menu-link {{ request()->routeIs('master.index') ? 'active' : '' }}" href="{{ route('master.index') }}">
 									<i class="fas fa-database"></i>
@@ -327,13 +337,7 @@
 
 			</div>
 
-			<!-- Floating clouds -->
-			<div class="cloud-icon cloud-1"><i class="fa fa-cloud"></i></div>
-			<div class="cloud-icon cloud-2"><i class="fa fa-cloud"></i></div>
-			<div class="cloud-icon cloud-3"><i class="fa fa-cloud"></i></div>
-
-			<!-- Moving rocket icon -->
-			<div class="moving-icon rocket"><i class="fa fa-rocket"></i></div>
+			
 		</div>
 
 

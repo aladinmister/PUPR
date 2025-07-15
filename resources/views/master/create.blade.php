@@ -13,7 +13,24 @@
 
         <!-- Jenis Surat -->
         <div class="form-group">
-            <label for="jenis_surat">Jenis Surat</label>
+            <label for="jenis_surat">Nama program</label>
+            <select name="jenis_surat" id="jenissurat" class="form-control select2">
+                <option value="" disabled>Pilih Jenis Surat</option>
+                <option value="Pembangunan Bendungan" selected>Pembangunan Bendungan</option>
+                <option value="Pembangunan Embung dan Penampung Air Lainnya">Pembangunan Embung dan Penampung Air Lainnya</option>
+            </select>
+        </div>
+
+             <div class="form-group">
+            <label for="jenis_surat">Nama kegiatan</label>
+            <select name="jenis_surat" id="jenissurat" class="form-control select2">
+                <option value="" disabled>Pilih Jenis Surat</option>
+                <option value="Pembangunan Bendungan" selected>Pembangunan Bendungan</option>
+                <option value="Pembangunan Embung dan Penampung Air Lainnya">Pembangunan Embung dan Penampung Air Lainnya</option>
+            </select>
+        </div>
+              <div class="form-group">
+            <label for="jenis_surat">Nama pekerjaan</label>
             <select name="jenis_surat" id="jenissurat" class="form-control select2">
                 <option value="" disabled>Pilih Jenis Surat</option>
                 <option value="Pembangunan Bendungan" selected>Pembangunan Bendungan</option>

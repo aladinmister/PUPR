@@ -9,14 +9,41 @@ use App\Http\Controllers\KonstruksiController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\PembangunanBendunganController;
 use App\Http\Controllers\PembangunanembungdanairController;
-
-
-
+use App\Http\Controllers\PengadaanController;
+use App\Http\Controllers\TemplateSuratController;
+use App\Http\Controllers\PeninjauanSuratController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+
+Route::get('/surat', [PengadaanController::class, 'index'])->name('surat.index');
+Route::get('/surat/{jenis}', [PengadaanController::class, 'byJenis'])->name('surat.byJenis');
+Route::post('/surat/store', [PengadaanController::class, 'store'])->name('surat.store');
+Route::get('/surat/export/{id}', [PengadaanController::class, 'export'])->name('surat.export');
+Route::get('/surat-export-all', [PengadaanController::class, 'exportAll'])->name('surat.exportAll');
+Route::get('/surat/download/all', [PengadaanController::class, 'downloadAll'])->name('surat.download.all');
+
+Route::get('/peninjauan', [PeninjauanSuratController::class, 'index'])->name('peninjauan.index');
+Route::post('/peninjauan/store', [PeninjauanSuratController::class, 'store'])->name('peninjauan.store');
+Route::post('/peninjauan/upload-ttd/{id}', [PeninjauanSuratController::class, 'uploadTTD'])->name('peninjauan.uploadTTD');
+
+
+
+
+
+
+Route::get('/templatee', [TemplateSuratController::class, 'index'])->name('template.index');
+Route::post('/template/upload', [TemplateSuratController::class, 'upload'])->name('template.upload');
+Route::get('/template/activate/{id}', [TemplateSuratController::class, 'activate'])->name('template.activate');
+Route::delete('/template/delete/{id}', [TemplateSuratController::class, 'delete'])->name('template.delete');
+Route::get('/template/show/{id}', [TemplateSuratController::class, 'show'])->name('template.show');
+
+
 
 
 
